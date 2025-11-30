@@ -14,11 +14,16 @@ This bundle provides a foundation for integrating CEIDG API services into your S
 
 ## Installation
 
-### As Part of Monorepo (Current Setup)
+### Step 1: Install via Composer
 
-The bundle is currently part of the main project. To use it:
+```bash
+composer require lljaworski/ceidg-bundle
+```
 
-1. Ensure the bundle is registered in `config/bundles.php`:
+### Step 2: Enable the Bundle
+
+If you're not using Symfony Flex, add the bundle to `config/bundles.php`:
+
 ```php
 return [
     // ...
@@ -26,26 +31,26 @@ return [
 ];
 ```
 
-2. Configure the bundle in `config/packages/ceidg.yaml`:
+### Step 3: Configure the Bundle
+
+Create a configuration file `config/packages/ceidg.yaml`:
+
 ```yaml
 ceidg:
     api_url: '%env(CEIDG_API_URL)%'
     api_key: '%env(CEIDG_API_KEY)%'
 ```
 
-3. Add environment variables to `.env`:
+### Step 4: Set Environment Variables
+
+Add the following to your `.env` file:
+
 ```bash
 CEIDG_API_URL=https://dane.biznes.gov.pl/api/ceidg/v2
 CEIDG_API_KEY=your_api_key_here
 ```
 
-### As Standalone Package (Future)
-
-When extracted as a separate package:
-
-```bash
-composer require lukaszjaworski/ceidg-bundle
-```
+You can obtain your CEIDG API key from [https://dane.biznes.gov.pl/](https://dane.biznes.gov.pl/).
 
 ## Configuration
 
@@ -103,17 +108,12 @@ Create API Platform resources in `src/ApiResource/` directory with corresponding
 ## Architecture
 
 This bundle follows:
-- **CQRS pattern** for command/query separation
-- **API Platform** best practices for REST API design
-- **Symfony** best practices for bundle development
-- **PSR-12** coding standards
+## Links
 
-## Future Extraction
+- [Packagist](https://packagist.org/packages/lljaworski/ceidg-bundle)
+- [GitHub Repository](https://github.com/lljaworski/ceidg-bundle)
 
-This bundle is designed to be extracted into a separate package. When extracting:
-
-1. Create a separate repository
-2. Update `composer.json` with proper repository information
+## License`composer.json` with proper repository information
 3. Set up CI/CD for independent testing
 4. Publish to Packagist
 5. Update main project to use the package via Composer
