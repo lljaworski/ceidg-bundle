@@ -1,5 +1,5 @@
 {
-    "name": "lukaszjaworski/ceidg-bundle",
+    "name": "lljaworski/ceidg-bundle",
     "description": "Symfony bundle for CEIDG (Centralna Ewidencja i Informacja o Działalności Gospodarczej) integration",
     "type": "symfony-bundle",
     "license": "MIT",
