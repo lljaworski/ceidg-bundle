@@ -8,24 +8,24 @@ namespace LukaszJaworski\CeidgBundle\Model;
  * Data Transfer Object for CEIDG address (Adres) data.
  * Represents a Polish address with all fields from CEIDG registry.
  */
-final readonly class AdresDTO
+final class AdresDTO
 {
     public function __construct(
-        public ?string $ulica = null,
-        public ?string $budynek = null,
-        public ?string $lokal = null,
-        public ?string $miasto = null,
-        public ?string $wojewodztwo = null,
-        public ?string $powiat = null,
-        public ?string $gmina = null,
-        public ?string $kraj = null,
-        public ?string $kod = null,
-        public ?string $skrytkaPocztowa = null,
-        public ?string $opisNietypowegoMiejsca = null,
-        public ?string $adresat = null,
-        public ?string $terc = null,
-        public ?string $simc = null,
-        public ?string $ulic = null,
+        public readonly ?string $ulica = null,
+        public readonly ?string $budynek = null,
+        public readonly ?string $lokal = null,
+        public readonly ?string $miasto = null,
+        public readonly ?string $wojewodztwo = null,
+        public readonly ?string $powiat = null,
+        public readonly ?string $gmina = null,
+        public readonly ?string $kraj = null,
+        public readonly ?string $kod = null,
+        public readonly ?string $skrytkaPocztowa = null,
+        public readonly ?string $opisNietypowegoMiejsca = null,
+        public readonly ?string $adresat = null,
+        public readonly ?string $terc = null,
+        public readonly ?string $simc = null,
+        public readonly ?string $ulic = null,
     ) {}
 
     /**

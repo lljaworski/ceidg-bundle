@@ -18,11 +18,11 @@ use Symfony\Component\HttpKernel\Exception\ServiceUnavailableHttpException;
  * 
  * Fetches company data from CEIDG API and handles errors appropriately.
  */
-final readonly class CeidgCompanyProvider implements ProviderInterface
+final class CeidgCompanyProvider implements ProviderInterface
 {
     public function __construct(
-        private CeidgApiService $ceidgApiService,
-        private LoggerInterface $logger,
+        private readonly CeidgApiService $ceidgApiService,
+        private readonly LoggerInterface $logger,
     ) {}
 
     /**

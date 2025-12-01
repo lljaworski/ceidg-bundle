@@ -8,28 +8,28 @@ namespace LukaszJaworski\CeidgBundle\Model;
  * Data Transfer Object for CEIDG company (Firma) data.
  * Contains essential fields from Polish business registry including addresses.
  */
-final readonly class FirmaCeidgDTO
+final class FirmaCeidgDTO
 {
     /**
      * @param array<int, AdresDTO> $adresyDzialalnosciDodatkowe Additional business activity addresses
      */
     public function __construct(
-        public string $nip,
-        public string $nazwa,
-        public \DateTimeInterface $dataRozpoczeciaDzialalnosci,
-        public \DateTimeInterface $dataPowstania,
-        public ?string $status = null,
-        public ?\DateTimeInterface $dataZawieszeniaDzialalnosci = null,
-        public ?\DateTimeInterface $dataWznowieniaDzialalnosci = null,
-        public ?\DateTimeInterface $dataZakonczeniaDzialalnosci = null,
-        public ?AdresDTO $adresDzialalnosci = null,
-        public ?AdresDTO $adresKorespondencyjny = null,
-        public array $adresyDzialalnosciDodatkowe = [],
-        public ?string $telefon = null,
-        public ?string $email = null,
-        public ?string $www = null,
-        public ?string $adresDoreczenElektronicznych = null,
-        public ?string $innaFormaKonaktu = null,
+        public readonly string $nip,
+        public readonly string $nazwa,
+        public readonly \DateTimeInterface $dataRozpoczeciaDzialalnosci,
+        public readonly \DateTimeInterface $dataPowstania,
+        public readonly ?string $status = null,
+        public readonly ?\DateTimeInterface $dataZawieszeniaDzialalnosci = null,
+        public readonly ?\DateTimeInterface $dataWznowieniaDzialalnosci = null,
+        public readonly ?\DateTimeInterface $dataZakonczeniaDzialalnosci = null,
+        public readonly ?AdresDTO $adresDzialalnosci = null,
+        public readonly ?AdresDTO $adresKorespondencyjny = null,
+        public readonly array $adresyDzialalnosciDodatkowe = [],
+        public readonly ?string $telefon = null,
+        public readonly ?string $email = null,
+        public readonly ?string $www = null,
+        public readonly ?string $adresDoreczenElektronicznych = null,
+        public readonly ?string $innaFormaKonaktu = null,
     ) {}
 
     /**
