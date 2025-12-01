@@ -19,7 +19,7 @@ use Symfony\Contracts\HttpClient\ResponseInterface;
  * 
  * Provides methods to fetch Polish business registry data with caching support.
  */
-final readonly class CeidgApiService
+final class CeidgApiService
 {
     private const REQUEST_TIMEOUT = 30;
     private const ACCEPT_HEADER = 'application/json';
@@ -27,11 +27,11 @@ final readonly class CeidgApiService
     private const CACHE_KEY_PREFIX = 'ceidg_company_';
 
     public function __construct(
-        private HttpClientInterface $httpClient,
-        private string $apiUrl,
-        private string $apiKey,
-        private CacheInterface $cache,
-        private LoggerInterface $logger,
+        private readonly HttpClientInterface $httpClient,
+        private readonly string $apiUrl,
+        private readonly string $apiKey,
+        private readonly CacheInterface $cache,
+        private readonly LoggerInterface $logger,
     ) {}
 
     /**
